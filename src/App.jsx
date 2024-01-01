@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css'
 import MoviesList from './components/MoviesList';
 import SearchMovies from './components/SearchMovies';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   let [movies, setMovies] = useState(null);
@@ -22,12 +23,16 @@ function App() {
   }, [])
 
   return (
-    <section className='app-container'>
-      <SearchMovies movies={movies} />
-      <MoviesList movies={movies}/>
-    </section>
-    
-  )
+		<>
+    <Routes>
+      <Route path='' element="" />
+    </Routes>
+			<section className="app-container">
+				<SearchMovies movies={movies} />
+				<MoviesList movies={movies} />
+			</section>
+		</>
+  );
 }
 
 export default App;

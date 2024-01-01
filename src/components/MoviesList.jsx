@@ -10,8 +10,9 @@ function MoviesList( {movies} ) {
                 <h2 className='movie-title'>{movie.Title.toUpperCase()}</h2>
                 <h3 className='movie-year'>Released: {movie.Year}</h3>
                 <img className='movie-image' src={movie.Poster} alt={movie.Title} />
-              </section>
-            ))}</section>
+              </section>))}
+              <header>MY FAVORITES</header>
+            </section>
     )
 }
 

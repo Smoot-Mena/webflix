@@ -16,8 +16,9 @@
 }
 
 header {
-    font-size: 2em;
-    padding: 10px;
+    font-size: 1.75em;
+    padding: 0 15px;
+    font-weight: bold;
 }
 
 nav {
@@ -30,6 +31,7 @@ nav {
     width: inherit;
     display: flex;
     overflow-x: auto;
+    flex-wrap: nowrap;
 }
 
 .movie {
@@ -40,11 +42,14 @@ nav {
 .movie-title {
     font-size: 1.5em;
     text-align: center;
-    letter-spacing: .1em;
+    letter-spacing: .15em;
+    margin-bottom: 20px;
 }
 
 .movie-year {
     text-align: right;
+    font-style: italic;
+    font-weight: 200;
 }
 
 .movie-image {
