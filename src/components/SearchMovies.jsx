@@ -25,12 +25,17 @@ function SearchMovies( {movies} ) {
       };
 
     return (
-		<>
+		<section>
             <nav>
                 <input type="text" value={input} onChange={handleChange} />
 				<button className="search-button" onClick={handleSubmit}>🔎 SEARCH</button>
 		    </nav>
-        </>
+            <section>
+                {searchedMovie && searchedMovie.map((movie) => (
+                    <h1>{movie.Title}</h1>
+                ))}
+            </section>
+        </section>
 	);
 }
 

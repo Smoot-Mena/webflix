@@ -9,6 +9,21 @@
     box-sizing: border-box;
 }
 
+#navigation {
+    height: 10vh;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(95deg, rgb(69, 69, 69), rgb(29, 29, 29));
+    font-size: 24px;
+    padding-top: 10px;
+}
+
+#navigation > a {
+    color: crimson;
+    text-decoration: none;
+}
+
 .app-container {
     width: 100vw;
     background: linear-gradient(95deg, rgb(69, 69, 69), rgb(29, 29, 29));
@@ -17,7 +32,7 @@
 
 header {
     font-size: 1.75em;
-    padding: 0 15px;
+    padding: 20px 15px;
     font-weight: bold;
 }
 
@@ -26,34 +41,39 @@ nav {
     justify-content: right;
 }
 
-#movies-container {
-    height: 100vh;
+.container {
+    height: inherit;
     width: inherit;
     display: flex;
     overflow-x: auto;
     flex-wrap: nowrap;
 }
 
-.movie {
+.movie,
+.show {
     width: 400px;
     margin: 20px;
 }
 
-.movie-title {
+.movie-title,
+.show-title {
     font-size: 1.5em;
     text-align: center;
     letter-spacing: .15em;
     margin-bottom: 20px;
 }
 
-.movie-year {
+.movie-year,
+.show-year {
     text-align: right;
     font-style: italic;
     font-weight: 200;
 }
 
-.movie-image {
+.movie-image,
+.show-image {
     height: 600px;
+    width: 400px;
 }
 
 /*********END OF FILE!!!*********/
