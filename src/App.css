@@ -1,0 +1,54 @@
+/**********************
+    Global Settings
+**********************/
+
+*,
+::after,
+::before {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.app-container {
+    width: 100vw;
+    background: linear-gradient(95deg, rgb(69, 69, 69), rgb(29, 29, 29));
+    color: snow;
+}
+
+header {
+    font-size: 2em;
+    padding: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: right;
+}
+
+#movies-container {
+    height: 100vh;
+    width: inherit;
+    display: flex;
+    overflow-x: auto;
+}
+
+.movie {
+    width: 400px;
+    margin: 20px;
+}
+
+.movie-title {
+    font-size: 1.5em;
+    text-align: center;
+    letter-spacing: .1em;
+}
+
+.movie-year {
+    text-align: right;
+}
+
+.movie-image {
+    height: 600px;
+}
+
+/*********END OF FILE!!!*********/
