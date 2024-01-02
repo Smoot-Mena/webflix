@@ -56,14 +56,18 @@ header {
 
 .movie,
 .show,
-.sport {
+.sport,
+.romcom,
+.standup {
     width: 400px;
     margin: 20px;
 }
 
 .movie-title,
 .show-title,
-.sport-title {
+.sport-title,
+.romcom-title,
+.standup-title {
     font-size: 1.5em;
     text-align: center;
     letter-spacing: .15em;
@@ -72,7 +76,9 @@ header {
 
 .movie-year,
 .show-year,
-.sport-year {
+.sport-year,
+.romcom-year,
+.standup-year {
     text-align: right;
     font-style: italic;
     font-weight: 200;
@@ -80,7 +86,9 @@ header {
 
 .movie-image,
 .show-image,
-.sport-image {
+.sport-image,
+.romcom-image,
+.standup-image {
     height: 600px;
     width: 400px;
 }
