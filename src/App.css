@@ -9,12 +9,15 @@
     box-sizing: border-box;
 }
 
+html {
+    background: linear-gradient(95deg, rgb(69, 69, 69), rgb(29, 29, 29));
+}
+
 #navigation {
     height: 10vh;
     padding: 0 30px;
     display: flex;
     justify-content: space-between;
-    background: linear-gradient(95deg, rgb(69, 69, 69), rgb(29, 29, 29));
     font-size: 24px;
     padding-top: 10px;
 }
@@ -36,17 +39,14 @@ header {
     font-weight: bold;
 }
 
-nav {
-    display: flex;
-    justify-content: right;
-}
-
 .container {
     height: inherit;
     width: inherit;
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
     flex-wrap: nowrap;
+    margin-bottom: 50px;
 }
 
 .container > a {
@@ -55,13 +55,15 @@ nav {
 }
 
 .movie,
-.show {
+.show,
+.sport {
     width: 400px;
     margin: 20px;
 }
 
 .movie-title,
-.show-title {
+.show-title,
+.sport-title {
     font-size: 1.5em;
     text-align: center;
     letter-spacing: .15em;
@@ -69,14 +71,16 @@ nav {
 }
 
 .movie-year,
-.show-year {
+.show-year,
+.sport-year {
     text-align: right;
     font-style: italic;
     font-weight: 200;
 }
 
 .movie-image,
-.show-image {
+.show-image,
+.sport-image {
     height: 600px;
     width: 400px;
 }

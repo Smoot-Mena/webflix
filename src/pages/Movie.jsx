@@ -38,7 +38,7 @@ function Movie( {movie} ) {
                 <p><strong>Awards:</strong> {movieInfo.Awards}</p>
                 <p><strong>Box Office:</strong> {movieInfo.BoxOffice}</p>
                 <p><strong>Ratings:</strong>
-                <ul>{movieInfo.Ratings.map((rating, index) => (
+                <ul>{movieInfo && movieInfo.Ratings.map((rating, index) => (
                     <li key={index}>{rating.Source}: {rating.Value}</li>
                 ))} 
                     <li>imDB Rating: {movieInfo.imdbRating}</li>

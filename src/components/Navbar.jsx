@@ -1,5 +1,4 @@
 import React from 'react';
-import SearchMovies from './SearchMovies';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
