@@ -25,9 +25,28 @@ function Movie( {movie} ) {
     console.log(movieInfo);
     
     return (
-        <section>
-        This is the movie page.
-        </section>
+        <section className='movie-card'>{movieInfo && (
+            <section>
+                <img src={movieInfo.Poster} alt={movieInfo.Title} />
+                <h2>Title: {movieInfo.Title}</h2>
+                <h5>Released: {movieInfo.Released}</h5>
+                <p><strong>Actors:</strong> {movieInfo.Actors}</p>
+                <p><strong>Rated:</strong> {movieInfo.Rated} <span>Runtime: {movieInfo.Runtime}</span></p>
+                <p><strong>Genre:</strong> {movieInfo.Genre}</p>
+                <p><strong>Director:</strong> {movieInfo.Director} <span>Writer: {movieInfo.Writer}</span></p>
+                <p><strong>Language:</strong> {movieInfo.Language}</p>
+                <p><strong>Plot:</strong> <q>{movieInfo.Plot}</q></p>
+                <p><strong>Awards:</strong> {movieInfo.Awards}</p>
+                <p><strong>Box Office:</strong> {movieInfo.BoxOffice}</p>
+                <p><strong>Ratings:</strong>
+                <ul>{movieInfo.Ratings.map((rating, index) => (
+                    <li key={index}>{rating.Source}: {rating.Value}</li>
+                ))} 
+                    <li>imDB Rating: {movieInfo.imdbRating}</li>
+                </ul>
+                </p>
+            </section>
+        )}</section>
     )
 }
 
