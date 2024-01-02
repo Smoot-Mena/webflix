@@ -49,6 +49,11 @@ nav {
     flex-wrap: nowrap;
 }
 
+.container > a {
+    color: snow;
+    text-decoration: none;
+}
+
 .movie,
 .show {
     width: 400px;
