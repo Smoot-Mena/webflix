@@ -34,11 +34,11 @@ function MoviesList( {movies} ) {
             <section className='container'>
                 <header>TOP SERIES</header>
                 {series && series.map((show, index) => (
-                    <section key={index} className='show'>
+                    <Link key={index} className='show' state={{movie: show}} to={`/${show.Title}`}>
                         <h2 className='show-title'>{show.Title.toUpperCase()}</h2>
                         <h3 className='show-year'>Released: {show.Year}</h3>
                         <img className='show-image' src={show.Poster} alt={show.Title} />
-                    </section>
+                    </Link>
                 ))}
             </section>
         </section>
