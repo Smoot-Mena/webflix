@@ -21,13 +21,12 @@ function Movie( {movie} ) {
     useEffect(() => {
         getMovieInfo();
     }, [])
-
-    console.log(movieInfo);
     
     return (
         <section className='movie-card'>{movieInfo && (
             <section>
                 <img src={movieInfo.Poster} alt={movieInfo.Title} />
+                <button onClick={() => {navigate("/")}}>↩ Return</button>
                 <h2>Title: {movieInfo.Title}</h2>
                 <h5>Released: {movieInfo.Released}</h5>
                 <p><strong>Actors:</strong> {movieInfo.Actors}</p>
