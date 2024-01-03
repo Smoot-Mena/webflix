@@ -23,13 +23,29 @@ function Movie( {movie} ) {
         getMovieInfo();
     }, [])
 
+    const manageFavs = () => {
+        if (status === "") {
+            setStatus("favorite");
+            localStorage.setItem(movieInfo.imdbID, [`${movieInfo.Title}, ${movieInfo.Poster}`]);
+        } else if (status === "favorite") {
+            setStatus("");
+            localStorage.removeItem(movieInfo.imdbID);
+        }
+    }
+
+    // const buttonStatus = () => {
+    //     for (let movie in localStorage) {
+    //         movie.includes(movieInfo.imdbID) ? "💔Remove from Favorites": "❤︎ Add to Favorites";
+    //     }
+    // }
+    
     
     return (
         <section className='movie-card'>{movieInfo && (
             <section>
                 <img src={movieInfo.Poster} alt={movieInfo.Title} />
                 <button onClick={() => {navigate("/")}}>↩ Return</button>
-                <button onClick={() => status === "" ? setStatus("favorite") : setStatus("")}>
+                <button onClick={() => manageFavs(movieInfo)}>
                     {status === "favorite" ? "💔Remove from Favorites" : "❤︎ Add to Favorites"}
                 </button>
                 <h2>Title: {movieInfo.Title}</h2>
