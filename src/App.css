@@ -7,6 +7,7 @@
 ::before {
     margin: 0;
     box-sizing: border-box;
+    list-style-type: none;
 }
 
 html {
@@ -23,7 +24,7 @@ html {
 }
 
 #navigation > a {
-    color: crimson;
+    color: orangered;
     text-decoration: none;
 }
 
@@ -93,6 +94,16 @@ header {
 .standup-image {
     height: 600px;
     width: 400px;
+}
+
+.movie-card {
+    display: flex;
+    justify-content: center;
+}
+
+.movie-card > section {
+    width: 30vw;
+    line-height: 2em;
 }
 
 /*********END OF FILE!!!*********/

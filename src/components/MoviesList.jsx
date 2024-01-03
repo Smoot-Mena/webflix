@@ -12,9 +12,7 @@ function MoviesList( {movies} ) {
     let getLists = async () => {
 		try {
             // Fetches Mysteries
-			let response = await fetch(
-				"https://www.omdbapi.com/?apikey=2231b390&s=mystery&type=series"
-			);
+			let response = await fetch("https://www.omdbapi.com/?apikey=2231b390&s=mystery&type=series");
             // Fetches Sports
             let secondResponse = await fetch("https://www.omdbapi.com/?apikey=2231b390&s=sports");
             // Fetches RomComs
