@@ -28,7 +28,8 @@ html {
 }
 
 .app-container {
-    width: 100vw;
+    margin-left: 5vw;
+    width: 92vw;
     background: linear-gradient(95deg, rgb(69, 69, 69), rgb(29, 29, 29));
     color: snow;
 }
@@ -47,6 +48,7 @@ header {
     overflow-y: hidden;
     flex-wrap: nowrap;
     margin-bottom: 50px;
+    scrollbar-width: none;
 }
 
 .container > a {

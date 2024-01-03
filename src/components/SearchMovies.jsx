@@ -28,7 +28,7 @@ function SearchMovies( {movies} ) {
 			<section id="searched-movie">
 				<form onSubmit={handleSubmit}>
 					<input type="text" value={input} onChange={handleChange} />
-					<button>Search</button>
+					<button>🔎 Search</button>
 					{searchedMovie && (
 						<section>
 							<img src={searchedMovie.Poster} alt="" />

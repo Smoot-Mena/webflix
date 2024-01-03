@@ -3,7 +3,6 @@ import './App.css'
 import MoviesList from './components/MoviesList';
 import Movie from './pages/Movie';
 import Favorites from './components/Favorites';
-// import SearchMovies from './components/SearchMovies';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import SearchMovies from './components/SearchMovies';
@@ -14,7 +13,7 @@ function App() {
   let getMovies = async () => {
     
     try {
-      let response = await fetch("https://www.omdbapi.com/?apikey=2231b390&s=harry potter and");
+      let response = await fetch("https://www.omdbapi.com/?apikey=2231b390&s=harry potter");
       let data = await response.json();
       setMovies(data.Search);
     } catch (error) {
