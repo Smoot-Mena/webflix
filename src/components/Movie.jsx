@@ -26,7 +26,7 @@ function Movie( {movie} ) {
     const manageFavs = () => {
         if (status === "") {
             setStatus("favorite");
-            localStorage.setItem(movieInfo.imdbID, [`${movieInfo.Title}, ${movieInfo.Poster}`]);
+            localStorage.setItem(movieInfo.imdbID, JSON.stringify(movieInfo.Title));
         } else if (status === "favorite") {
             setStatus("");
             localStorage.removeItem(movieInfo.imdbID);

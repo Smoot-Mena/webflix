@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css'
 import MoviesList from './components/MoviesList';
-import Movie from './pages/Movie';
+import Movie from './components/Movie';
 import Favorites from './components/Favorites';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -32,8 +32,8 @@ function App() {
 			<Routes>
 				<Route path="/" element={<MoviesList movies={movies} />} />
         <Route path="/:movie/" element={<Movie movies={movies} />} />
-        <Route path='/search/' element={<SearchMovies movies={movies} />} />
-        <Route path='/my-favorites/' element={<Favorites movies={movies} />}/>
+        <Route path='/search/' element={<SearchMovies />} />
+        <Route path='/my-favorites/' element={<Favorites />}/>
 			</Routes>
 		  </section>
     </section>
