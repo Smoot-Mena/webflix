@@ -69,7 +69,7 @@ function MoviesList( {movies} ) {
 		<section id="ultimate-container">
 			<header>TOP MOVIES</header>
 			<Carousel className="carousel-container">
-            {<button onClick={prev} className="left-arrow">⬅</button>}
+            {currentIndex > 0 && <button onClick={prev} className="left-arrow">⬅</button>}
 				<section className="container carousel-content-container">
 					{movies &&
 						movies.map((movie, index) => (
@@ -89,7 +89,7 @@ function MoviesList( {movies} ) {
 									alt={movie.Title}/>
 							</Link>))}
 				</section>
-                {<button onClick={next} className="right-arrow">➡</button>}
+                {currentIndex < moviesLength - 4 && <button onClick={next} className="right-arrow">➡</button>}
 			</Carousel>
 			<header>TOP SERIES</header>
 			<Carousel className="carousel-container">
