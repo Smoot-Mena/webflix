@@ -5,8 +5,8 @@ function Navbar() {
     return (
         <section id='navigation'>
             <Link to="/">Home</Link>
-            <Link to="/my-favorites/">My Favorites</Link>
-            <Link to="/search/">Search Movies</Link>
+            <Link to="/my-favorites/">MY FAVORITES</Link>
+            <Link to="/search/">SEARCH MOVIES</Link>
             </section>
     )
 }
