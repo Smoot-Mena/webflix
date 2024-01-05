@@ -24,14 +24,22 @@ img {
     display: flex;
     justify-content: space-around;
     font-size: 24px;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     letter-spacing: .2em;
     border-bottom: 3px solid orangered;
 }
 
 #navigation > a {
+    display: flex;
     color: orangered;
     text-decoration: none;
+    align-items: center;
+}
+
+#navigation > a:hover {
+    background-color: orangered;
+    color: black;
+    transition: .5s;
 }
 
 .app-container {
@@ -101,6 +109,8 @@ header {
 .right-arrow {
     right: 35px;
 }
+
+/*-------END OF CAROUSEL SETTINGS!!!-------*/
 
 .container > a {
     color: snow;
