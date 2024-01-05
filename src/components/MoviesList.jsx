@@ -48,7 +48,7 @@ function MoviesList( {movies} ) {
     return (
         <section id='ultimate-container'>
             <header>TOP MOVIES</header>
-            <Carousel>
+            <Carousel className="carousel-container">
             <section className='container'>  
             {movies &&
             movies.map((movie, index) => (
@@ -60,51 +60,47 @@ function MoviesList( {movies} ) {
             </section>
             </Carousel>
             <header>TOP SERIES</header>
-            <Carousel>
+            <Carousel className="carousel-container">
             <section className='container'>
                 {series && series.map((show, index) => (
                     <Link key={index} className='show' state={{movie: show}} to={`/${show.Title}`}>
                         <h2 className='show-title'>{show.Title.toUpperCase()}</h2>
                         <h3 className='show-year'>Released: {show.Year}</h3>
                         <img className='show-image' src={show.Poster} alt={show.Title} />
-                    </Link>
-                ))}
+                    </Link>))}
             </section>
             </Carousel>
             <header>TOP SPORTS</header>
-            <Carousel>
+            <Carousel className="carousel-container">
             <section className='container'>
                 {sports && sports.map((sport, index) => (
                     <Link key={index} className='sport' state={{movie: sport}} to={`/${sport.Title}`}>
                         <h2 className='sport-title'>{sport.Title.toUpperCase()}</h2>
                         <h3 className='sport-year'>Released: {sport.Year}</h3>
                         <img className='sport-image' src={sport.Poster === "N/A" ? "src/assets/pexels-film.jpg": sport.Poster} alt={sport.Title} />
-                    </Link>
-                ))}
+                    </Link>))}
             </section>
             </Carousel>
             <header>TOP ROMANTIC COMEDIES</header>
-            <Carousel>
+            <Carousel className="carousel-container">
             <section className='container'>
                 {romcoms && romcoms.map((romcom, index) => (
                     <Link key={index} className='romcom' state={{movie: romcom}} to={`/${romcom.Title}`}>
                         <h2 className='romcom-title'>{romcom.Title.toUpperCase()}</h2>
                         <h3 className='romcom-year'>Released: {romcom.Year}</h3>
                         <img className='romcom-image' src={romcom.Poster === "N/A" ? "src/assets/pexels-film.jpg": romcom.Poster} alt={romcom.Title} />
-                    </Link>
-                ))}
+                    </Link>))}
             </section>
             </Carousel>
             <header>TOP STANDUP COMEDIES</header>
-            <Carousel>
+            <Carousel className="carousel-container">
             <section className='container'>
                 {standups && standups.map((standup, index) => (
                     <Link key={index} className='standup' state={{movie: standup}} to={`/${standup.Title}`}>
                         <h2 className='standup-title'>{standup.Title.toUpperCase()}</h2>
                         <h3 className='standup-year'>Released: {standup.Year}</h3>
                         <img className='standup-image' src={standup.Poster === "N/A" ? "src/assets/pexels-film.jpg": standup.Poster} alt={standup.Title} />
-                    </Link>
-                ))}
+                    </Link>))}
             </section>
             </Carousel>
         </section>

@@ -22,7 +22,6 @@ function Favorites() {
     
     return (
         <section id='favorites-container'>{movies && movies.map((movie, index) => (
-            // <Link key={keys[index]}>
             <section className='favorite' key={index} >
                 <h1 className='favorites-title'>{keys[index]}</h1>
                 <img src={movie} alt={keys[index]}/>

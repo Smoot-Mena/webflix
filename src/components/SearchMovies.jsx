@@ -35,7 +35,7 @@ function SearchMovies( {movies} ) {
 					<button>🔎 Search</button>
 					{searchedMovie && (
 						<section>
-							<img src={searchedMovie.Poster} alt="" />
+							<img src={searchedMovie.Poster} alt={searchedMovie.Title} />
 							<h2>Title: {searchedMovie.Title}</h2>
                             <button onClick={() => addFav(searchedMovie)}>{"❤︎ Add to Favorites"}</button>
 							<h5>Released: {searchedMovie.Released}</h5>
