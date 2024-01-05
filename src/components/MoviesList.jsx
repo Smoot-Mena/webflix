@@ -45,15 +45,35 @@ function MoviesList( {movies} ) {
         getLists();
       }, [])
 
+      const [currentIndex, setCurrentIndex] = useState(0);
+      const [moviesLength, setMoviesLength] = useState(0);
+  
+      const next = () => {
+          if (currentIndex < (moviesLength - 1)) {
+              setCurrentIndex(prevState => prevState + 1);
+          }
+      }
+  
+      const prev = () => {
+          if (currentIndex > 0) {
+              setCurrentIndex(prevState => prevState - 1);
+          }
+      }
+
+      useEffect(() => {
+        movies ? setMoviesLength(movies.length) : setMoviesLength(10);
+    }, [movies])
+  
+
     return (
 		<section id="ultimate-container">
 			<header>TOP MOVIES</header>
 			<Carousel className="carousel-container">
+            {<button onClick={prev} className="left-arrow">⬅</button>}
 				<section className="container carousel-content-container">
-					<button className="left-arrow">⬅</button>
 					{movies &&
 						movies.map((movie, index) => (
-							<Link key={index}
+							<Link style={{ transform: `translateX(-${currentIndex * 110}%)` }} key={index}
 								className="movie carousel-content"
 								state={{ movie: movie }}
 								to={`/${movie.Title}`}>
@@ -68,13 +88,12 @@ function MoviesList( {movies} ) {
 									src={movie.Poster}
 									alt={movie.Title}/>
 							</Link>))}
-					<button className="right-arrow">➡</button>
 				</section>
+                {<button onClick={next} className="right-arrow">➡</button>}
 			</Carousel>
 			<header>TOP SERIES</header>
 			<Carousel className="carousel-container">
 				<section className="container carousel-content-container">
-					<button className="left-arrow">⬅</button>
 					{series &&
 						series.map((show, index) => (
 							<Link key={index}
@@ -92,13 +111,11 @@ function MoviesList( {movies} ) {
 									src={show.Poster}
 									alt={show.Title}/>
 							</Link>))}
-					<button className="right-arrow">➡</button>
 				</section>
 			</Carousel>
 			<header>TOP SPORTS</header>
 			<Carousel className="carousel-container">
 				<section className="container carousel-content-container">
-					<button className="left-arrow">⬅</button>
 					{sports &&
 						sports.map((sport, index) => (
 							<Link key={index}
@@ -116,13 +133,11 @@ function MoviesList( {movies} ) {
 									src={sport.Poster === "N/A" ? "src/assets/pexels-film.jpg" : sport.Poster}
 									alt={sport.Title}/>
 							</Link>))}
-					<button className="right-arrow">➡</button>
 				</section>
 			</Carousel>
 			<header>TOP ROMANTIC COMEDIES</header>
 			<Carousel className="carousel-container">
 				<section className="container carousel-content-container">
-					<button className="left-arrow">⬅</button>
 					{romcoms &&
 						romcoms.map((romcom, index) => (
 							<Link key={index}
@@ -140,13 +155,11 @@ function MoviesList( {movies} ) {
 									src={romcom.Poster === "N/A" ? "src/assets/pexels-film.jpg" : romcom.Poster}
 									alt={romcom.Title}/>
 							</Link>))}
-					<button className="right-arrow">➡</button>
 				</section>
 			</Carousel>
 			<header>TOP STANDUP COMEDIES</header>
 			<Carousel className="carousel-container">
 				<section className="container carousel-content-container">
-					<button className="left-arrow">⬅</button>
 					{standups &&
 						standups.map((standup, index) => (
 							<Link key={index}
@@ -163,7 +176,6 @@ function MoviesList( {movies} ) {
                                         src={standup.Poster === "N/A" ? "src/assets/pexels-film.jpg" : standup.Poster} 
                                         alt={standup.Title}/>
 							</Link>))}
-					<button className="right-arrow">➡</button>
 				</section>
 			</Carousel>
 		</section>

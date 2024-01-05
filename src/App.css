@@ -84,30 +84,31 @@ header {
     scrollbar-width: none;
 }
 
-.carousel-content {
-    /* display: flex; */
-    transition: all 250ms linear;
-}
+/* .carousel-content {
+     display: flex; 
+     transition: all 250ms linear;
+} */
 
 .left-arrow, .right-arrow {
     font-size: 1.5em;
     position: absolute;
     z-index: 1;
-    top: 50%;
+    top: 70%;
     transform: translateY(-50%);
     width: 40px;
     height: 40px;
     border-radius: 50%;
     background-color: snow;
     border:  3px solid orangered;
+    cursor: pointer;
 }
 
 .left-arrow {
-    left: 30px;
+    left: 130px;
 }
 
 .right-arrow {
-    right: 35px;
+    right: 100px;
 }
 
 /*-------END OF CAROUSEL SETTINGS!!!-------*/
