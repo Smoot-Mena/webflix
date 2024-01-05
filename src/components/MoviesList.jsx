@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Carousel from './Carousel';
 import { Link } from 'react-router-dom';
 
 function MoviesList( {movies} ) {
@@ -47,6 +48,7 @@ function MoviesList( {movies} ) {
     return (
         <section id='ultimate-container'>
             <header>TOP MOVIES</header>
+            <Carousel>
             <section className='container'>  
             {movies &&
             movies.map((movie, index) => (
@@ -56,7 +58,9 @@ function MoviesList( {movies} ) {
                 <img className='movie-image' src={movie.Poster} alt={movie.Title} />
               </Link>))}
             </section>
+            </Carousel>
             <header>TOP SERIES</header>
+            <Carousel>
             <section className='container'>
                 {series && series.map((show, index) => (
                     <Link key={index} className='show' state={{movie: show}} to={`/${show.Title}`}>
@@ -66,7 +70,9 @@ function MoviesList( {movies} ) {
                     </Link>
                 ))}
             </section>
+            </Carousel>
             <header>TOP SPORTS</header>
+            <Carousel>
             <section className='container'>
                 {sports && sports.map((sport, index) => (
                     <Link key={index} className='sport' state={{movie: sport}} to={`/${sport.Title}`}>
@@ -76,7 +82,9 @@ function MoviesList( {movies} ) {
                     </Link>
                 ))}
             </section>
+            </Carousel>
             <header>TOP ROMANTIC COMEDIES</header>
+            <Carousel>
             <section className='container'>
                 {romcoms && romcoms.map((romcom, index) => (
                     <Link key={index} className='romcom' state={{movie: romcom}} to={`/${romcom.Title}`}>
@@ -86,7 +94,9 @@ function MoviesList( {movies} ) {
                     </Link>
                 ))}
             </section>
+            </Carousel>
             <header>TOP STANDUP COMEDIES</header>
+            <Carousel>
             <section className='container'>
                 {standups && standups.map((standup, index) => (
                     <Link key={index} className='standup' state={{movie: standup}} to={`/${standup.Title}`}>
@@ -96,6 +106,7 @@ function MoviesList( {movies} ) {
                     </Link>
                 ))}
             </section>
+            </Carousel>
         </section>
     )
 }

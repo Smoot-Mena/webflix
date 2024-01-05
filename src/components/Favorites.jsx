@@ -16,15 +16,19 @@ function Favorites() {
         showMovies();
     }, [])
 
-    console.log(keys[0]);
+    const removeFav = (movie) => {
+        localStorage.removeItem(movie);
+    }
     
     return (
         <section id='favorites-container'>{movies && movies.map((movie, index) => (
             // <Link key={keys[index]}>
-            <Link key={index} state={{movie: keys[index]}} to={`/${keys[index]}`}>
-                <h1>{keys[index]}</h1>
+            <section className='favorite' key={index} >
+                <h1 className='favorites-title'>{keys[index]}</h1>
                 <img src={movie} alt={keys[index]}/>
-            </Link>
+                <button onClick={() => removeFav(keys[index])}>{"💔Remove from Favorites"}
+                </button>
+            </section>
             
         ))}</section>
     )

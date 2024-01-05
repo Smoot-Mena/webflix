@@ -23,6 +23,10 @@ function SearchMovies( {movies} ) {
           console.error(error);
         }
       };
+
+      const addFav = (movie) => {
+        localStorage.setItem(movie.Title, movie.Poster);
+      }
     
       return (
 			<section id="searched-movie">
@@ -33,6 +37,7 @@ function SearchMovies( {movies} ) {
 						<section>
 							<img src={searchedMovie.Poster} alt="" />
 							<h2>Title: {searchedMovie.Title}</h2>
+                            <button onClick={() => addFav(searchedMovie)}>{"❤︎ Add to Favorites"}</button>
 							<h5>Released: {searchedMovie.Released}</h5>
 							<p>
 								<strong>Actors:</strong> {searchedMovie.Actors}

@@ -71,4 +71,3 @@ function Movie( {movie} ) {
 }
 
 export default Movie;
-
