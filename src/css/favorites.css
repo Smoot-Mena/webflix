@@ -2,6 +2,8 @@
 * Main Settings 
 *****************/
 
-
+#favorites-container {
+    display: flex;
+}
 
 /********END OF FILE!!!*******/

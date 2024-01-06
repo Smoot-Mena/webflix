@@ -14,7 +14,7 @@ function MoviesList( {movies} ) {
             // Fetches Mysteries
 			let response = await fetch("https://www.omdbapi.com/?apikey=2231b390&s=mystery&type=series");
             // Fetches Sports
-            let secondResponse = await fetch("https://www.omdbapi.com/?apikey=2231b390&s=sports");
+            let secondResponse = await fetch("https://www.omdbapi.com/?apikey=2231b390&s=football");
             // Fetches RomComs
             let thirdResponse = await fetch("https://www.omdbapi.com/?apikey=2231b390&s=romantic");
             // Fetches Standups
