@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Carousel from './Carousel';
 import { Link } from 'react-router-dom';
 
 function MoviesList( {movies} ) {
@@ -134,7 +133,7 @@ function MoviesList( {movies} ) {
     return (
 		<section id="ultimate-container">
 			<header>TOP MOVIES</header>
-			<Carousel className="carousel-container">
+			<section className="carousel-container">
             {moviesCurrentIndex > 0 && <button onClick={prev} className="left arrow">⬅</button>}
 				<section className="container carousel-content-container">
 					{movies &&
@@ -156,9 +155,9 @@ function MoviesList( {movies} ) {
 							</Link>))}
 				</section>
                 {moviesCurrentIndex < moviesLength - 3 && <button onClick={next} className="right arrow">➡</button>}
-			</Carousel>
+			</section>
 			<header>TOP SERIES</header>
-			<Carousel className="carousel-container">
+			<section className="carousel-container">
             {seriesCurrentIndex > 0 && <button onClick={seriesPrev} className="series-left arrow">⬅</button>}
 				<section className="container carousel-content-container">
 					{series &&
@@ -180,9 +179,9 @@ function MoviesList( {movies} ) {
 							</Link>))}
 				</section>
                 {seriesCurrentIndex < seriesLength - 3 && <button onClick={seriesNext} className="series-right arrow">➡</button>}
-			</Carousel>
+			</section>
 			<header>TOP SPORTS</header>
-			<Carousel className="carousel-container">
+			<section className="carousel-container">
             {sportsCurrentIndex > 0 && <button onClick={sportsPrev} className="sports-left arrow">⬅</button>}
 				<section className="container carousel-content-container">
 					{sports &&
@@ -204,9 +203,9 @@ function MoviesList( {movies} ) {
 							</Link>))}
 				</section>
                 {sportsCurrentIndex < sportsLength - 3 && <button onClick={sportsNext} className="sports-right arrow">➡</button>}
-			</Carousel>
+			</section>
 			<header>TOP ROMANTIC COMEDIES</header>
-			<Carousel className="carousel-container">
+			<section className="carousel-container">
             {romcomsCurrentIndex > 0 && <button onClick={romcomsPrev} className="romcoms-left arrow">⬅</button>}
 				<section className="container carousel-content-container">
 					{romcoms &&
@@ -228,9 +227,9 @@ function MoviesList( {movies} ) {
 							</Link>))}
 				</section>
                 {romcomsCurrentIndex < romcomsLength - 3 && <button onClick={romcomsNext} className="romcoms-right arrow">➡</button>}
-			</Carousel>
+			</section>
 			<header>TOP STANDUP COMEDIES</header>
-			<Carousel className="carousel-container">
+			<section className="carousel-container">
             {standupsCurrentIndex > 0 && <button onClick={standupsPrev} className="standups-left arrow">⬅</button>}
 				<section className="container carousel-content-container">
 					{standups &&
@@ -251,7 +250,7 @@ function MoviesList( {movies} ) {
 							</Link>))}
 				</section>
                 {standupsCurrentIndex < standupsLength - 3 && <button onClick={standupsNext} className="standups-right arrow">➡</button>}
-			</Carousel>
+			</section>
 		</section>
 	);
 }
