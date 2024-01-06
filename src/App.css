@@ -59,17 +59,6 @@ header {
 
 /******Carousel Settings******/
 
-/* .container {
-    height: inherit;
-    width: inherit;
-    display: flex;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    flex-wrap: nowrap;
-    margin-bottom: 100px;
-    scrollbar-width: none;
-} */
-
 .carousel-container {
     width: inherit;
     display: flex;
@@ -84,16 +73,11 @@ header {
     scrollbar-width: none;
 }
 
-/* .carousel-content {
-     display: flex; 
-     transition: all 250ms linear;
-} */
-
-.left-arrow, .right-arrow {
+.arrow {
     font-size: 1.5em;
     position: absolute;
     z-index: 1;
-    top: 70%;
+    top: 90vh;
     transform: translateY(-50%);
     width: 40px;
     height: 40px;
@@ -103,12 +87,40 @@ header {
     cursor: pointer;
 }
 
-.left-arrow {
-    left: 130px;
+.left,
+.series-left,
+.sports-left,
+.romcoms-left,
+.standups-left {
+    left: 8vw;
 }
 
-.right-arrow {
-    right: 100px;
+.right,
+.series-right,
+.sports-right,
+.romcoms-right,
+.standups-right {
+    right: 12vw;
+}
+
+.series-left,
+.series-right {
+    top: 210vh;
+}
+
+.sports-left,
+.sports-right {
+    top: 325vh;
+}
+
+.romcoms-left,
+.romcoms-right {
+    top: 450vh;
+}
+
+.standups-left,
+.standups-right {
+    top: 565vh;
 }
 
 /*-------END OF CAROUSEL SETTINGS!!!-------*/
@@ -171,8 +183,37 @@ header {
 }
 
 .movie-card > section {
-    width: 30vw;
+    width: 650px;
     line-height: 2em;
+}
+
+#return-button,
+#favorite-button {
+    position: absolute;
+    background-color: black;
+    color: orangered;
+    border: 3px solid black;
+    border-radius: 7px;
+    margin: 0 3px;
+    padding: 6px;
+    font-size: 1.2em;
+    cursor: pointer;
+    top: 72.5vh;
+}
+
+#return-button {
+    right: 43.5vw;
+}
+
+#favorite-button {
+    right: 27.5vw;
+}
+
+#return-button:hover,
+#favorite-button:hover {
+    background-color: orangered;
+    color: black;
+    transition: .3s;
 }
 
 /*********END OF FILE!!!*********/

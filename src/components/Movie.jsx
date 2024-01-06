@@ -31,39 +31,32 @@ function Movie( {movie} ) {
             setStatus("");
             localStorage.removeItem(movieInfo.imdbID);
         }
-    }
-
-    // const buttonStatus = () => {
-    //     for (let movie in localStorage) {
-    //         movie.includes(movieInfo.imdbID) ? "💔Remove from Favorites": "❤︎ Add to Favorites";
-    //     }
-    // }
-    
+    }    
     
     return (
         <section className='movie-card'>{movieInfo && (
             <section>
-                <img src={movieInfo.Poster} alt={movieInfo.Title} />
-                <button onClick={() => {navigate("/")}}>↩ Return</button>
-                <button onClick={() => manageFavs(movieInfo)}>
+                <img id='movie-image' src={movieInfo.Poster} alt={movieInfo.Title} />
+                <button id='return-button' onClick={() => {navigate("/")}}>↩ Return</button>
+                <button id='favorite-button' onClick={() => manageFavs(movieInfo)}>
                     {status === "favorite" ? "💔Remove from Favorites" : "❤︎ Add to Favorites"}
                 </button>
-                <h2>Title: {movieInfo.Title}</h2>
-                <h5><i>Released: {movieInfo.Released}</i></h5>
-                <p><strong>Actors:</strong> {movieInfo.Actors}</p>
-                <p><strong>Rated:</strong> {movieInfo.Rated} <span>Runtime: {movieInfo.Runtime}</span></p>
-                <p><strong>Genre:</strong> {movieInfo.Genre}</p>
-                <p><strong>Director:</strong> {movieInfo.Director}</p>
-                <p><strong>Writer:</strong> {movieInfo.Writer}</p>
-                <p><strong>Language:</strong> {movieInfo.Language}</p>
-                <p><strong>Plot:</strong> <q>{movieInfo.Plot}</q></p>
-                <p><strong>Awards:</strong> {movieInfo.Awards}</p>
-                <p><strong>Box Office:</strong> {movieInfo.BoxOffice}</p>
-                <p><strong>Ratings:</strong></p>
-                <ul>{movieInfo && movieInfo.Ratings.map((rating, index) => (
-                    <li key={index}>{rating.Source}: {rating.Value}</li>
+                <h2 id='movie-title'>Title: {movieInfo.Title}</h2>
+                <h5 id='movie-released'><i>Released: {movieInfo.Released}</i></h5>
+                <p id='movie-actors'><strong>Actors:</strong> {movieInfo.Actors}</p>
+                <p id='movie-rated'><strong>Rated:</strong> {movieInfo.Rated} <span>Runtime: {movieInfo.Runtime}</span></p>
+                <p id='movie-genre'><strong>Genre:</strong> {movieInfo.Genre}</p>
+                <p id='movie-director'><strong>Director:</strong> {movieInfo.Director}</p>
+                <p id='movie-writer'><strong>Writer:</strong> {movieInfo.Writer}</p>
+                <p id='movie-language'><strong>Language:</strong> {movieInfo.Language}</p>
+                <p id='movie-plot'><strong>Plot:</strong> <q>{movieInfo.Plot}</q></p>
+                <p id='movie-awards'><strong>Awards:</strong> {movieInfo.Awards}</p>
+                <p id='movie-box-office'><strong>Box Office:</strong> {movieInfo.BoxOffice}</p>
+                <p id='movie-ratings-title'><strong>Ratings:</strong></p>
+                <ul id='movie-ratings-container'>{movieInfo && movieInfo.Ratings.map((rating, index) => (
+                    <li className='movie-rating' key={index}>{rating.Source}: {rating.Value}</li>
                 ))} 
-                    <li>imDB Rating: {movieInfo.imdbRating}</li>
+                    <li id='movie-imdb-rating'>imDB Rating: {movieInfo.imdbRating}</li>
                 </ul>
             </section>
         )}</section>

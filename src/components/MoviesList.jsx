@@ -3,7 +3,7 @@ import Carousel from './Carousel';
 import { Link } from 'react-router-dom';
 
 function MoviesList( {movies} ) {
-    // Media Variables
+    // Media Fetch Variables
     let [series, setSeries] = useState(null);
     let [sports, setSports] = useState(null);
     let [romcoms, setRomcoms] = useState(null);
@@ -45,35 +45,101 @@ function MoviesList( {movies} ) {
         getLists();
       }, [])
 
-      const [currentIndex, setCurrentIndex] = useState(0);
+      // Media Carousel Variables
+      const [moviesCurrentIndex, setMoviesCurrentIndex] = useState(0);
       const [moviesLength, setMoviesLength] = useState(0);
-  
+
+      const [seriesCurrentIndex, setSeriesCurrentIndex] = useState(0);
+      const [seriesLength, setSeriesLength] = useState(0);
+
+      const [sportsCurrentIndex, setSportsCurrentIndex] = useState(0);
+      const [sportsLength, setSportsLength] = useState(0);
+
+      const [romcomsCurrentIndex, setRomcomsCurrentIndex] = useState(0);
+      const [romcomsLength, setRomcomsLength] = useState(0);
+
+      const [standupsCurrentIndex, setStandupsCurrentIndex] = useState(0);
+      const [standupsLength, setStandupsLength] = useState(0);
+      
+      // Arrow Functions
       const next = () => {
-          if (currentIndex < (moviesLength - 1)) {
-              setCurrentIndex(prevState => prevState + 1);
+          if (moviesCurrentIndex < (moviesLength - 1)) {
+              setMoviesCurrentIndex(prevState => prevState + 1);
           }
       }
   
       const prev = () => {
-          if (currentIndex > 0) {
-              setCurrentIndex(prevState => prevState - 1);
+          if (moviesCurrentIndex > 0) {
+              setMoviesCurrentIndex(prevState => prevState - 1);
           }
+      }
+
+      const seriesPrev = () => {
+        if (seriesCurrentIndex > 0) {
+            setSeriesCurrentIndex(prevState => prevState - 1);
+        }
+      }
+
+      const seriesNext = () => {
+        if (seriesCurrentIndex < (seriesLength - 1)) {
+            setSeriesCurrentIndex(prevState => prevState + 1);
+        }
+      }
+
+      const sportsPrev = () => {
+        if (sportsCurrentIndex > 0) {
+            setSportsCurrentIndex(prevState => prevState - 1);
+        }
+      }
+
+      const sportsNext = () => {
+        if (sportsCurrentIndex < (sportsLength - 1)) {
+            setSportsCurrentIndex(prevState => prevState + 1);
+        }
+      }
+
+      const romcomsPrev = () => {
+        if (romcomsCurrentIndex > 0) {
+            setRomcomsCurrentIndex(prevState => prevState - 1);
+        }
+      }
+
+      const romcomsNext = () => {
+        if (romcomsCurrentIndex < (romcomsLength - 1)) {
+            setRomcomsCurrentIndex(prevState => prevState + 1);
+        }
+      }
+
+      const standupsPrev = () => {
+        if (standupsCurrentIndex > 0) {
+            setStandupsCurrentIndex(prevState => prevState - 1);
+        }
+      }
+
+      const standupsNext = () => {
+        if (standupsCurrentIndex < (standupsLength - 1)) {
+            setStandupsCurrentIndex(prevState => prevState + 1);
+        }
       }
 
       useEffect(() => {
         movies ? setMoviesLength(movies.length) : setMoviesLength(10);
-    }, [movies])
+        series ? setSeriesLength(series.length) : setSeriesLength(10);
+        sports ? setSportsLength(sports.length) : setSportsLength(10);
+        romcoms ? setRomcomsLength(romcoms.length) : setRomcomsLength(10);
+        standups ? setStandupsLength(standups.length) : setStandupsLength(10);
+    }, [movies, series, sports, romcoms, standups])
   
 
     return (
 		<section id="ultimate-container">
 			<header>TOP MOVIES</header>
 			<Carousel className="carousel-container">
-            {currentIndex > 0 && <button onClick={prev} className="left-arrow">⬅</button>}
+            {moviesCurrentIndex > 0 && <button onClick={prev} className="left arrow">⬅</button>}
 				<section className="container carousel-content-container">
 					{movies &&
 						movies.map((movie, index) => (
-							<Link style={{ transform: `translateX(-${currentIndex * 110}%)` }} key={index}
+							<Link style={{ transform: `translateX(-${moviesCurrentIndex * 110}%)` }} key={index}
 								className="movie carousel-content"
 								state={{ movie: movie }}
 								to={`/${movie.Title}`}>
@@ -89,14 +155,15 @@ function MoviesList( {movies} ) {
 									alt={movie.Title}/>
 							</Link>))}
 				</section>
-                {currentIndex < moviesLength - 4 && <button onClick={next} className="right-arrow">➡</button>}
+                {moviesCurrentIndex < moviesLength - 3 && <button onClick={next} className="right arrow">➡</button>}
 			</Carousel>
 			<header>TOP SERIES</header>
 			<Carousel className="carousel-container">
+            {seriesCurrentIndex > 0 && <button onClick={seriesPrev} className="series-left arrow">⬅</button>}
 				<section className="container carousel-content-container">
 					{series &&
 						series.map((show, index) => (
-							<Link key={index}
+							<Link style={{ transform: `translateX(-${seriesCurrentIndex * 110}%)` }} key={index}
 								className="show carousel-content"
 								state={{ movie: show }}
 								to={`/${show.Title}`}>
@@ -112,13 +179,15 @@ function MoviesList( {movies} ) {
 									alt={show.Title}/>
 							</Link>))}
 				</section>
+                {seriesCurrentIndex < seriesLength - 3 && <button onClick={seriesNext} className="series-right arrow">➡</button>}
 			</Carousel>
 			<header>TOP SPORTS</header>
 			<Carousel className="carousel-container">
+            {sportsCurrentIndex > 0 && <button onClick={sportsPrev} className="sports-left arrow">⬅</button>}
 				<section className="container carousel-content-container">
 					{sports &&
 						sports.map((sport, index) => (
-							<Link key={index}
+							<Link style={{ transform: `translateX(-${sportsCurrentIndex * 110}%)` }} key={index}
 								className="sport carousel-content"
 								state={{ movie: sport }}
 								to={`/${sport.Title}`}>
@@ -134,13 +203,15 @@ function MoviesList( {movies} ) {
 									alt={sport.Title}/>
 							</Link>))}
 				</section>
+                {sportsCurrentIndex < sportsLength - 3 && <button onClick={sportsNext} className="sports-right arrow">➡</button>}
 			</Carousel>
 			<header>TOP ROMANTIC COMEDIES</header>
 			<Carousel className="carousel-container">
+            {romcomsCurrentIndex > 0 && <button onClick={romcomsPrev} className="romcoms-left arrow">⬅</button>}
 				<section className="container carousel-content-container">
 					{romcoms &&
 						romcoms.map((romcom, index) => (
-							<Link key={index}
+							<Link style={{ transform: `translateX(-${romcomsCurrentIndex * 110}%)` }} key={index}
 								className="romcom carousel-content"
 								state={{ movie: romcom }}
 								to={`/${romcom.Title}`}>
@@ -156,13 +227,15 @@ function MoviesList( {movies} ) {
 									alt={romcom.Title}/>
 							</Link>))}
 				</section>
+                {romcomsCurrentIndex < romcomsLength - 3 && <button onClick={romcomsNext} className="romcoms-right arrow">➡</button>}
 			</Carousel>
 			<header>TOP STANDUP COMEDIES</header>
 			<Carousel className="carousel-container">
+            {standupsCurrentIndex > 0 && <button onClick={standupsPrev} className="standups-left arrow">⬅</button>}
 				<section className="container carousel-content-container">
 					{standups &&
 						standups.map((standup, index) => (
-							<Link key={index}
+							<Link style={{ transform: `translateX(-${standupsCurrentIndex * 110}%)` }} key={index}
 								className="standup carousel-content"
 								state={{ movie: standup }}
 								to={`/${standup.Title}`}>
@@ -177,6 +250,7 @@ function MoviesList( {movies} ) {
                                         alt={standup.Title}/>
 							</Link>))}
 				</section>
+                {standupsCurrentIndex < standupsLength - 3 && <button onClick={standupsNext} className="standups-right arrow">➡</button>}
 			</Carousel>
 		</section>
 	);
