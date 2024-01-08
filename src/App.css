@@ -20,6 +20,8 @@ img {
     border-radius: 5px;
 }
 
+/*****Navigation*****/
+
 #webflix-logo {
     width: 200px;
 }
@@ -51,9 +53,11 @@ img {
     background-color: snow;
 }
 
+/*---------END OF NAVIGATION!!!---------*/
+
 .app-container {
     margin-top: 40px;
-    margin-left: 5vw;
+    margin-left: 3vw;
     width: 92vw;
     background: linear-gradient(95deg, rgb(69, 69, 69), rgb(29, 29, 29));
     color: snow;
@@ -102,7 +106,7 @@ header {
 .sports-left,
 .romcoms-left,
 .standups-left {
-    left: 8vw;
+    left: 5vw;
 }
 
 .right,
@@ -110,7 +114,7 @@ header {
 .sports-right,
 .romcoms-right,
 .standups-right {
-    right: 6vw;
+    right: 7vw;
 }
 
 .series-left,
@@ -218,6 +222,80 @@ strong {
     background-color: orangered;
     color: black;
     transition: .3s;
+}
+
+/**********************
+    Laptop Settings
+**********************/
+
+@media screen and (max-width: 1600px) {
+    .app-container {
+        margin-top: 40px;
+        margin-left: 10vw;
+        width: 80vw;
+    }
+
+    header {
+        font-size: 1.55em;
+        padding: 20px 15px;
+        font-weight: bold;
+        font-style: italic;
+        color: orangered;
+    }
+
+    /******Carousel Settings******/
+
+    .movie,
+    .show,
+    .sport,
+    .romcom,
+    .standup {
+        width: 360px;
+        margin: 10px 30px;
+    }
+
+    .arrow {
+        top: 90vh;
+    }
+
+    .left,
+    .series-left,
+    .sports-left,
+    .romcoms-left,
+    .standups-left {
+        left: 15vw;
+    }
+
+    .right,
+    .series-right,
+    .sports-right,
+    .romcoms-right,
+    .standups-right {
+        right: 12vw;
+    }
+
+    .series-left,
+    .series-right {
+        top: 200vh;
+    }
+
+    .sports-left,
+    .sports-right {
+        top: 310vh;
+    }
+
+    .romcoms-left,
+    .romcoms-right {
+        top: 435vh;
+    }
+
+    .standups-left,
+    .standups-right {
+        top: 550vh;
+    }
+
+    /*-------END OF CAROUSEL SETTINGS!!!-------*/
+
 }
 
 /*********END OF FILE!!!*********/
