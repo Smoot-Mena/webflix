@@ -14,11 +14,11 @@ Search for any movie within the database.
 
 Peruse through movie information including actors, box office earnings, ratings, etc.
 
-![favorites page] (src/assets/favorites.png?raw=true "Favorites Page")
+![favorites page] (/src/assets/favorites.png?raw=true "Favorites Page")
 
-![home page] (src/assets/homepage.png?raw=true "Home Page")
+![home page] (/src/assets/homepage.png?raw=true "Home Page")
 
-![search page] (src/assets/search.png?raw=true "Search Page")
+![search page] (/src/assets/search.png?raw=true "Search Page")
 
 ## License
 
