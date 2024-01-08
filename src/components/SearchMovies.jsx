@@ -29,16 +29,16 @@ function SearchMovies( {movies} ) {
       }
     
       return (
-			<section id="searched-movie">
-				<form onSubmit={handleSubmit}>
+			<section id="searched-movie-container">
+				<form id='search-form' onSubmit={handleSubmit}>
 					<input type="text" value={input} onChange={handleChange} />
-					<button>🔎 Search</button>
+					<button id='search-button'>🔎 Search</button>
 					{searchedMovie && (
-						<section>
+						<section id='searched-movie-card'>
 							<img src={searchedMovie.Poster} alt={searchedMovie.Title} />
-							<h2>Title: {searchedMovie.Title}</h2>
-                            <button onClick={() => addFav(searchedMovie)}>{"❤︎ Add to Favorites"}</button>
-							<h5>Released: {searchedMovie.Released}</h5>
+                            <button id='add-favorites-button' onClick={() => addFav(searchedMovie)}>{"❤︎ Add to Favorites"}</button>
+							<h2><strong>Title:</strong> {searchedMovie.Title}</h2>
+							<h5><strong>Released:</strong> {searchedMovie.Released}</h5>
 							<p>
 								<strong>Actors:</strong> {searchedMovie.Actors}
 							</p>
@@ -71,9 +71,10 @@ function SearchMovies( {movies} ) {
 							</p>
 							<p>
 								<strong>Ratings:</strong>
-								<ul>
+							</p>{" "}
+                            <ul>
 									{searchedMovie &&
-										searchedMovie.Ratings.map(
+										searchedMovie.Ratings?.map(
 											(rating, index) => (
 												<li key={index}>
 													{rating.Source}:{" "}
@@ -85,7 +86,6 @@ function SearchMovies( {movies} ) {
 										imDB Rating: {searchedMovie.imdbRating}
 									</li>
 								</ul>
-							</p>{" "}
 						</section>
 					)}
 				</form>

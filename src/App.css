@@ -2,6 +2,7 @@
     Global Settings
 **********************/
 @import "./css/favorites.css";
+@import "./css/searchMovies.css";
 
 *,
 ::after,
@@ -25,7 +26,6 @@ img {
     display: flex;
     justify-content: space-around;
     font-size: 24px;
-    /* padding-top: 20px; */
     letter-spacing: .2em;
     border-bottom: 3px solid orangered;
 }
@@ -56,6 +56,7 @@ header {
     padding: 20px 15px;
     font-weight: bold;
     font-style: italic;
+    color: orangered;
 }
 
 /******Carousel Settings******/
@@ -78,11 +79,11 @@ header {
     font-size: 1.5em;
     position: absolute;
     z-index: 1;
-    top: 90vh;
+    top: 70vh;
     transform: translateY(-50%);
     width: 40px;
     height: 40px;
-    border-radius: 50%;
+    border-radius: 7px;
     background-color: snow;
     border:  3px solid orangered;
     cursor: pointer;
@@ -101,27 +102,27 @@ header {
 .sports-right,
 .romcoms-right,
 .standups-right {
-    right: 12vw;
+    right: 6vw;
 }
 
 .series-left,
 .series-right {
-    top: 210vh;
+    top: 160vh;
 }
 
 .sports-left,
 .sports-right {
-    top: 325vh;
+    top: 245vh;
 }
 
 .romcoms-left,
 .romcoms-right {
-    top: 450vh;
+    top: 340vh;
 }
 
 .standups-left,
 .standups-right {
-    top: 565vh;
+    top: 430vh;
 }
 
 /*-------END OF CAROUSEL SETTINGS!!!-------*/
@@ -145,7 +146,7 @@ header {
 .sport-title,
 .romcom-title,
 .standup-title {
-    font-size: 1.5em;
+    font-size: 1.35em;
     text-align: center;
     letter-spacing: .15em;
     margin-bottom: 20px;
@@ -167,7 +168,7 @@ header {
 .romcom-image,
 .standup-image {
     height: 600px;
-    width: 400px;
+    width: inherit;
 }
 
 .movie-image:hover,
@@ -188,9 +189,12 @@ header {
     line-height: 2em;
 }
 
+strong {
+    color: orangered;
+}
+
 #return-button,
 #favorite-button {
-    position: absolute;
     background-color: black;
     color: orangered;
     border: 3px solid black;
@@ -199,15 +203,6 @@ header {
     padding: 6px;
     font-size: 1.2em;
     cursor: pointer;
-    top: 72.5vh;
-}
-
-#return-button {
-    right: 43.5vw;
-}
-
-#favorite-button {
-    right: 27.5vw;
 }
 
 #return-button:hover,

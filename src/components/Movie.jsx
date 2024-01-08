@@ -41,8 +41,8 @@ function Movie( {movie} ) {
                 <button id='favorite-button' onClick={() => manageFavs(movieInfo)}>
                     {status === "favorite" ? "💔Remove from Favorites" : "❤︎ Add to Favorites"}
                 </button>
-                <h2 id='movie-title'>Title: {movieInfo.Title}</h2>
-                <h5 id='movie-released'><i>Released: {movieInfo.Released}</i></h5>
+                <h2 id='movie-title'><strong>Title:</strong> {movieInfo.Title}</h2>
+                <h5 id='movie-released'><i><strong>Released:</strong> {movieInfo.Released}</i></h5>
                 <p id='movie-actors'><strong>Actors:</strong> {movieInfo.Actors}</p>
                 <p id='movie-rated'><strong>Rated:</strong> {movieInfo.Rated} <span>Runtime: {movieInfo.Runtime}</span></p>
                 <p id='movie-genre'><strong>Genre:</strong> {movieInfo.Genre}</p>

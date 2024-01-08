@@ -1,0 +1,59 @@
+/*****************
+* Main Settings 
+*****************/
+
+#searched-movie-container {
+    display: flex;
+    justify-content: center;
+}
+
+#search-form {
+    width: 650px;
+    line-height: 2em;
+}
+
+#search-form > input {
+    background-color: black;
+    color: black;
+    border: 2px solid orangered;
+    border-radius: 7px;
+    margin: 5px 3px;
+    padding: 8px;
+    font-size: 1.2em;
+    letter-spacing: .2em;
+}
+
+#search-form > input:focus-visible {
+    background-color:  orangered;
+    outline: none;
+    border: 2px solid black;
+}
+
+#searched-movie-card {
+    width: inherit;
+}
+
+#searched-movie-card > img {
+    width: 400px;
+}
+
+#add-favorites-button,
+#search-button {
+    background-color: black;
+    color: orangered;
+    border: 3px solid black;
+    border-radius: 7px;
+    margin: 5px 3px;
+    padding: 6px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#add-favorites-button:hover,
+#search-button:hover {
+    background-color: orangered;
+    color: black;
+    transition: .3s;
+}
+
+/********END OF FILE!!!*******/
