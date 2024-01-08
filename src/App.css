@@ -20,6 +20,10 @@ img {
     border-radius: 5px;
 }
 
+#webflix-logo {
+    width: 200px;
+}
+
 #navigation {
     height: 10vh;
     padding: 0 30px;
@@ -41,6 +45,10 @@ img {
     background-color: orangered;
     color: black;
     transition: .5s;
+}
+
+#navigation > a:first-of-type:hover {
+    background-color: snow;
 }
 
 .app-container {
